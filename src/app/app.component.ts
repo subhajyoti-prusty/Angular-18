@@ -1,0 +1,28 @@
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { AppNavbar } from './navbar/navbar.component';
+import { HeaderComponent } from './header/header.component';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, AppNavbar, HeaderComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title: string = 'This is loaded Dynamically';
+  imgSrc: string = 'https://angular.io/assets/images/logos/angular/angular.png';
+  isDisabled: boolean = true;
+  isActive: boolean = true;
+  fruitName: string = 'Apple';
+
+  onClick() {
+    console.log('Button Clicked');
+  }
+
+  keyupFiltering() {
+    console.log('Keyup Event');
+  }
+
+}

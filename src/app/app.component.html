@@ -1,0 +1,36 @@
+<h1>First Angular App</h1>
+
+<!-- Component Selector -->
+<app-navbar></app-navbar>
+<app-header></app-header>
+
+<!-- String Interpolation -->
+<h2>{{title}}</h2>
+<p>{{ 1+1 }}</p>
+
+<img [src]="imgSrc" alt="Logo">
+
+<!-- Property Binding -->
+<button disabled="{{isDisabled}}" >Disabled using String Interpolation</button>
+<button [disabled]="isDisabled" >Disabled using property Binding</button>
+
+<!-- Class Binding -->
+<button 
+[class.active]="isActive" 
+[class.no-active]="!isActive"
+[class.border]="isActive"
+[class.no-border]="!isActive"
+>Click Me</button>
+
+<button [class.apple]= "fruitName == 'Apple'">fruit</button>
+
+<!-- Style Binding -->
+<button 
+[style.background]="isActive ? 'red' : 'blue'"
+[style.border]="isActive ? '2px solid yellow' : ''">Click Me</button>
+
+<!-- Event Binding -->
+<button (click)="onClick()">Click Me</button>
+
+<input type="text" (keyup.a)="keyupFiltering()">
+
