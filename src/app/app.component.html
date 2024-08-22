@@ -32,5 +32,13 @@
 <!-- Event Binding -->
 <button (click)="onClick()">Click Me</button>
 
-<input type="text" (keyup.a)="keyupFiltering()">
+<input type="text" (keyup.enter)="keyupFiltering()">
 
+<!-- Template Variable -->
+<input type="text" (keyup.enter)="keyupFiltering1(user)" #user>
+
+<!-- Two Way Binding -->
+ <input type="text" [value] = "userName" #username (keyup.enter)="updateUserName(username)">
+
+ <input type="text" [(ngModel)] = "userName">
+ <h3>{{userName}}</h3>

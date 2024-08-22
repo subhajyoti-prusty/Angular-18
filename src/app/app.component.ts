@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AppNavbar } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AppNavbar, HeaderComponent],
+  imports: [RouterOutlet, AppNavbar, HeaderComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -22,7 +23,17 @@ export class AppComponent {
   }
 
   keyupFiltering() {
-    console.log('Keyup Event');
+    console.log('keyupFiltering');
   }
 
+  keyupFiltering1(user:HTMLInputElement) {
+    console.log(user.value);
+  }
+
+  userName: string = 'John Doe';
+  updateUserName(username: HTMLInputElement){
+    this.userName = username.value;
+    console.log(this.userName);
+    
+  }
 }
